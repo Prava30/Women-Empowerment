@@ -1,0 +1,395 @@
+/*Google fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    color: red;
+    font-size: 40px;
+    background-size: auto;
+    background-color: aquamarine;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Navigation Bar */
+.nav {
+    position:relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent */
+    transition: all 0.3s ease-in-out;
+}
+
+.nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items:start;
+}
+
+.nav ul li {
+    position: relative;
+}
+
+.nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+.nav ul li:hover > a,
+.nav ul li.active > a {
+    color: #FF0000;
+}
+
+.nav ul li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent */
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0);
+}
+
+.nav ul ul li {
+    width: 200px;
+    float: none;
+    display: list-item;
+    position: relative;
+	text-transform: uppercase;
+}
+
+.nav ul ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.subcontainer {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: auto;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent */
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-20px);
+
+    /* new properties */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.nav ul ul li:hover .subcontainer {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+.navbar-brand img ,
+.logo img{
+	display: inline;
+    width: 90px;
+    height: 70px;
+    margin-left: 10px;
+    padding-top: 5px;
+}
+/*mobile*/
+@media (max-width: 768px) {
+	/* Set navbar to be displayed in a column */
+	.navbar {
+	flex-direction: column;
+	height: 100vh;
+	justify-content: space-between;
+	}
+	
+	/* Remove fixed top positioning */
+	.navbar-fixed-top {
+	position:-webkit-sticky;
+	}
+	
+	/* Hide navbar brand */
+    .navbar-header {
+	display:block;
+	}
+	
+	/* Show logo and center it */
+	.logo {
+	display: block;
+	text-align: center;
+	margin-top: 20px;
+	}
+	
+	/* Show nav links */
+	.nav-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 20px;
+	}
+	
+	/* Remove subnav indicators */
+	.subnav > a::after {
+	display: none;
+	}
+	
+	/* Show subnav items */
+	.subnav {
+	display: none;
+	position: static;
+	}
+	
+	/* Show subcontainer items */
+	.subcontainer {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	z-index: 1;
+	padding: 0;
+	margin: 0;
+	}
+	
+	/* Show subnav when parent is clicked */
+	.nav-list li:hover .subnav {
+	display: block;
+	position: static;
+	}
+	
+	/* Show subcontainer when subnav item is clicked */
+	.subnav li:hover .subcontainer {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	z-index: 1;
+	padding: 0;
+	margin: 0;
+	}
+	
+	/* Hide scrollbar and adjust screen */
+	body {
+	overflow-x: hidden;
+	}
+	}
+
+/* .navbar-default {
+	background-color: transparent !important;
+	border-color: transparent !important;
+} */           
+/* Jab background mai kuch doga to upar ka msg out kr lana */
+.navbar-default .navbar-nav>li>a {
+	color: #fff;
+	text-transform: uppercase;
+}
+.navbar-default .navbar-brand {
+	font-size:40px;
+	color: #fff;
+	/* text-transform: uppercase; */
+	font-weight: 900;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+	color: #fff;
+	background-color: transparent;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+	color: #fff;
+	background-color: none;
+}
+
+	
+@media only screen and (max-width: 767px) {
+	.navbar-default .navbar-collapse {
+		border-color: transparent;
+		background: #000;
+	}
+	.navbar-default .navbar-nav>li>a {
+		color:#f2f2f2;
+	}
+
+}
+/* End Navigation Bar */
+
+.quotes {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.card {
+    height: 300px;
+    margin: 50px;
+    box-shadow: 5px 5px 20px red;
+    overflow: hidden;
+}
+img {
+    height: 300px;
+    width: 250px;
+    border-radius: 3px;
+    transition: .5s;
+}
+
+.intro {
+    height: 70px;
+    width: 250px;
+    padding: 5px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 240px;
+    background: grey;
+    color: white;
+    transition: .5s;
+}
+
+.quotes p {
+    font-size: 20px;
+    margin: 20px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.quotes p span {
+    font-weight: bold;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover .intro {
+    height: 200px;
+    bottom: 200px;
+    background: red;
+}
+
+.card:hover p {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card:hover img {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+/*Footer*/
+Footer a:hover {
+	color: #FF0000;
+  }
+  
+  .social a:hover img {
+	filter: brightness(50%);
+  }
+  
+footer.bg-black {
+	background-color: black;
+	color: white;
+	/* padding: 50px 0; */
+  }
+  a{
+	color: #fff;
+  }
+  .logo,
+  .quick-links-h3,
+  .services-h3,
+  .categories-h3,
+  .contact-h3,
+  .links ul li a,
+  .footer-bottom p {
+	color: white;
+	text-decoration: none;
+  }
+  
+  .links ul li a:hover,
+  .social img:hover {
+	opacity: 0.7;
+  }
+  
+  .links ul li a {
+	transition: all 0.3s ease;
+  }
+  
+  .links ul li {
+	margin-bottom: 10px;
+  }
+  
+  .footer-top::after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  .footer-bottom {
+	padding-top: 20px;
+	border-top: 1px solid #ccc;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+  
+  .social a {
+	margin-right: 10px;
+  }
+  
+  .social img {
+	width: 25px;
+	height: 25px;
+  }
+  
+  @media (max-width: 768px) {
+	.links {
+	  width: 50%;
+	}
+  
+	.logo {
+	  text-align: center;
+	}
+  
+	.footer-top {
+	  text-align: center;
+	}
+  
+	.footer-bottom {
+	  flex-direction: column;
+	  text-align: center;
+	}
+  }
+/*search*/
+#basic-addon2 {
+	background: #FF0000;
+	color: #fff;
+}
+input[type=search] {
+	display: inline;
+	width: 60%;
+}
+/*End search*/
+hr {
+	border: none; /* Remove the default border */
+	height: 1px; /* Set the height of the line */
+	background-color: #FF0000; /* Set the color of the line */
+	margin: 20px 0; /* Add some margin to the top and bottom of the line */
+}
+/* footer End */
